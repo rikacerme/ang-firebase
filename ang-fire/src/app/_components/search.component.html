@@ -1,0 +1,25 @@
+<div class="search-area">
+    
+    Search Country
+    <div class="ng-autocomplete">
+        <ng-autocomplete
+          [data]="countries"
+          [minQueryLength]="3"
+          [searchKeyword]="keyword"
+          placeHolder="Enter the Country Name"
+          (selected)='search($event)'
+          historyIdentifier="countries"
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate">
+        </ng-autocomplete>
+      
+        <ng-template #itemTemplate let-item>
+          <a [innerHTML]="item.name"></a>
+        </ng-template>
+      
+        <ng-template #notFoundTemplate let-notFound>
+          <div style="color:red;">Not Found Data</div>
+        </ng-template>
+      </div> 
+</div>
+    

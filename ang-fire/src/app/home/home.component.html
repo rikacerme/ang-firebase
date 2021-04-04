@@ -1,0 +1,24 @@
+﻿<div class="p-4">
+    <div class="container">
+        <h3>Selected Country {{ selected }}</h3>
+    </div>
+    <div style="visibility: hidden; position: fixed"
+        [style.left]="contextMenuPosition.x"
+        [style.top]="contextMenuPosition.y"
+        [matMenuTriggerFor]="contextMenu">
+    </div>
+    <mat-menu #contextMenu="matMenu">
+        <ng-template matMenuContent let-item="item">
+            <button mat-menu-item (click)="ihracatYap()">İhracat yap</button>
+            <button mat-menu-item (click)="ithalatYap()">İthalat yap</button>
+            <button mat-menu-item (click)="notEkle()">Not Ekle</button>
+            <button mat-menu-item (click)="bilgileriSil()">Bilgileri Sil</button>
+        </ng-template>
+    </mat-menu>
+    <div id="chartdiv" class="chart"></div>
+    <div class="continent" *ngFor="let item of items; let i = index" >
+        <button class="btn btn-primary" (click)="goContinent(item)">
+            {{i}} {{item.name}}
+        </button>
+    </div>
+</div>

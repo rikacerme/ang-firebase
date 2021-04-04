@@ -1,0 +1,20 @@
+﻿<div class="p-4 table-parent">
+    <table>
+        <thead>
+            <tr>
+                <th>Ülke</th>
+                <th>İthalat</th>
+                <th>İhracat</th>
+                <th>Not</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of pageList">
+                <th>{{ item.country }}</th>
+                <td [className]="getItemIth(item)" class="">{{ getItemIth(item) }}</td>
+                <td [className]="getItemIhr(item)">{{ getItemIhr(item) }}</td>
+                <td>{{ getItemNote(item)}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
