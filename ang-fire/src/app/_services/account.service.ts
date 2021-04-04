@@ -43,12 +43,12 @@ export class AccountService {
     }
 
     async loginWithGoogle(){
-        var result = await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-        console.log(result)
+        this.result = await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+        console.log(this.result)
         if(this.result.message){
             console.error(this.result.message)
         } else{
-            localStorage.setItem('user', JSON.stringify({'mail':result.user.email, 'pass': 'loginWithGoogle'}));
+            localStorage.setItem('user', JSON.stringify({'mail':this.result.user.email, 'pass': 'loginWithGoogle'}));
             const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
             this.router.navigateByUrl(returnUrl);
         }

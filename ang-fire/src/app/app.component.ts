@@ -7,10 +7,9 @@ export class AppComponent {
     user: User;
     username = '';
 
-
     constructor(private accountService: AccountService) {
         this.accountService.user.subscribe(x => this.user = x);
-        this.username = this.accountService.userValue.mail;
+        this.username = this.accountService.userValue ? this.accountService.userValue.mail : '';
     }
 
     logout() {
