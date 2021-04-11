@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { AlertComponent, SearchComponent } from './_components';
 import { HomeComponent } from './home';
 import { ContinentComponent } from './continent'
-import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatMenuModule } from '@angular/material/menu'; 
 import { MatListModule } from '@angular/material/list'; 
